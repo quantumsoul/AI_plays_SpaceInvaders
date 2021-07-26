@@ -85,7 +85,8 @@ for episode in range(1000):
         experience = (state, action, next_state, reward, done)
         Agent.train(ep_len, p_model, t_model, experience)
         state = next_state
-        score += reward 
+        score += reward
+        env.render()
     aggr_rewards['per_ep'].append(score)
     print(score)
 env.close()
